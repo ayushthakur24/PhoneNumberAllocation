@@ -1,0 +1,35 @@
+<html>
+<head>
+<style>
+ @keyframes animate{ 
+   0%{ 
+     opacity: 0; 
+   } 
+   50%{ 
+     opacity: 0.7; 
+   } 
+   100%{ 
+     opacity: 0; 
+   } 
+ } 
+ #blinker
+ {
+     margin-left:30%;
+     font-size:3em;
+      animation: animate  
+                1.5s linear infinite; 
+ }
+</style>
+</head>
+<body style="background:#00ffb8">
+<h1 style="margin-left:18%;margin-top:10%;font-size:4em"> PHONE NUMBER ALLOTMENT SYSTEM</h1>
+<span><a style="margin-left:30%;font-size: 3em;" href='/allotNumber'>Normal Allotment</a></span>
+<span><a  style="margin-left:3%;font-size: 3em;" href='/allotSpecialNumber'>Special Allotment</a></span>
+<%= yield %>
+<% if session[:message] %>
+<div id="blinker"><h><%= session[:message] %></h></div>
+<% session[:message] = nil%>
+<%end%>
+</body>
+
+</html>
